@@ -22,7 +22,7 @@ function getPosts()
 function getPost($postId)
 {
     $db = dbConnect();
-    $req = $db->prepare('SELECT ID, Title, Lead, Content, Date_publish FROM posts WHERE ID = 1');
+    $req = $db->prepare('SELECT ID, Title, Lead, Content, Date_publish FROM posts WHERE ID = ?');
     $req->execute(array($postId));
     $post = $req->fetch();
 

@@ -1,8 +1,8 @@
 <?php
 require('model.php');
 
-if (isset($_GET['id']) && $_GET['id'] > 0) {
-    $post = getPost($_GET['id']);
+if (isset($_GET['ID']) && $_GET['ID'] > 0) {
+    $post = getPost($_GET['ID']);
     require('indexView.php');
 }
 else {
