@@ -10,19 +10,11 @@ function dbConnect()
     {
         die('Erreur : '.$e->getMessage());
     }
-}
-function getPosts()
-{
-    $db = dbConnect();
-    $req = $db->query('SELECT ID, Title, Lead, Content, Date_publish FROM posts ORDER BY Date_publish DESC LIMIT 0, 5');
-
-    return $req;
-}
 
 function getPost($postId)
 {
     $db = dbConnect();
-    $req = $db->prepare('SELECT ID, Title, Lead, Content, Date_publish FROM posts WHERE id = ?');
+    $req = $db->prepare('SELECT ID, Title, Lead, Content, Date_publish FROM posts');
     $req->execute(array($postId));
     $post = $req->fetch();
 
