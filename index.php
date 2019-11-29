@@ -6,5 +6,5 @@ if (isset($_GET['ID']) && $_GET['ID'] > 0) {
     require('indexView.php');
 }
 else {
-    echo 'Erreur : aucun identifiant de billet envoyé';
+    echo 'Erreur : aucun identifiant de billet envoye';
 }
