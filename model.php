@@ -20,3 +20,4 @@ function getPost($postId)
 
     return $post;
 }
+?>
