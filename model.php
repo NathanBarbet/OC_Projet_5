@@ -14,10 +14,9 @@ function dbConnect()
 function getPost($postId)
 {
     $db = dbConnect();
-    $req = $db->prepare('SELECT ID, Title, Lead, Content, Date_publish FROM posts');
+    $req = $db->prepare('SELECT ID, Title, Lead, Content, Date_publish FROM posts WHERE ID = ?');
     $req->execute(array($postId));
     $post = $req->fetch();
 
     return $post;
 }
-?>
