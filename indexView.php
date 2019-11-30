@@ -328,6 +328,28 @@
     </div>
   </div>
 
+  <?php
+          while ($data = $posts->fetch())
+          {
+          ?>
+              <div class="news">
+                  <h3>
+                      <?= htmlspecialchars($data['Title']) ?>
+                      <em>le <?= $data['Date_publish'] ?></em>
+                  </h3>
+
+                  <p>
+                      <?= nl2br(htmlspecialchars($data['Content'])) ?>
+                      <br />
+                      <em><a href="#">Commentaires</a></em>
+                  </p>
+              </div>
+          <?php
+          }
+          $posts->closeCursor();
+          ?>
+
+
   <!--/ Section Portfolio Star /-->
   <section id="work" class="portfolio-mf sect-pt4 route">
     <div class="container">
@@ -339,16 +361,6 @@
             </h3>
             <p class="subtitle-a">
               <div class="news">
-                <h3>
-                  <?= htmlspecialchars($post['Title']) ?>
-                  <em>le <?= $post['Date_publish'] ?></em>
-                </h3>
-                <p>
-                  <?= nl2br(htmlspecialchars($post['Lead'])) ?>
-                </p>
-                <p>
-                  <?= nl2br(htmlspecialchars($post['Content'])) ?>
-                </p>
               </div>
             </p>
             <div class="line-mf"></div>

@@ -14,17 +14,7 @@ function dbConnect()
 function getPosts()
 {
     $db = dbConnect();
-    $req = $db->query('SELECT ID, Title, Lead, Content, Date_publish FROM posts ORDER BY Date_publish DESC LIMIT 0, 5');
+    $req = $db->query('SELECT ID, Title, Content, Date_publish FROM posts ORDER BY Date_publish DESC LIMIT 0, 5');
 
     return $req;
-}
-
-function getPost($postId)
-{
-    $db = dbConnect();
-    $req = $db->prepare('SELECT ID, Title, Lead, Content, Date_publish FROM posts WHERE ID = ?');
-    $req->execute(array($postId));
-    $post = $req->fetch();
-
-    return $post;
 }
