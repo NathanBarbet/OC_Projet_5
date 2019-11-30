@@ -335,13 +335,13 @@
               <div class="news">
                   <h3>
                       <?= htmlspecialchars($data['Title']) ?>
+                      <br />
                       <em>le <?= $data['Date_publish'] ?></em>
                   </h3>
 
                   <p>
                       <?= nl2br(htmlspecialchars($data['Content'])) ?>
                       <br />
-                      <em><a href="#">Commentaires</a></em>
                   </p>
               </div>
           <?php
