@@ -19,7 +19,7 @@ function post()
     $post = $postManager->getPost($_GET['ID']);
     $comments = $commentManager->getComments($_GET['ID']);
 
-    require('view/frontend/postView.php');
+    require('view/frontend/post.php');
 }
 
 function addComment($postId, $author, $comment)
