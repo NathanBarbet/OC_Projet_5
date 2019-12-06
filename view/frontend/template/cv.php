@@ -8,15 +8,15 @@
               <div class="row">
                 <div class="col-sm-6 col-md-5">
                   <div class="about-img">
-                    <img src="public/img/testimonial-2.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                    <img src="https://user.oc-static.com/users/avatars/15620576259606_Image%20petit.png" class="img-fluid rounded b-shadow-a" alt="">
                   </div>
                 </div>
                 <div class="col-sm-6 col-md-7">
                   <div class="about-info">
-                    <p><span class="title-s">Name: </span> <span>Morgan Freeman</span></p>
-                    <p><span class="title-s">Profile: </span> <span>full stack developer</span></p>
-                    <p><span class="title-s">Email: </span> <span>contact@example.com</span></p>
-                    <p><span class="title-s">Phone: </span> <span>(617) 557-0089</span></p>
+                    <p><span class="title-s">Nom: </span> <span>Nathan Barbet</span></p>
+                    <p><span class="title-s">Profile: </span> <span>Web developer</span></p>
+                    <p><span class="title-s">Email: </span> <span>nathan.barbet@hotmail.fr</span></p>
+                    <p><span class="title-s">Tel: </span> <span>00.00.00.00.00</span></p>
                   </div>
                 </div>
               </div>
@@ -48,7 +48,7 @@
               <div class="about-me pt-4 pt-md-0">
                 <div class="title-box-2">
                   <h5 class="title-left">
-                    About me
+                    A propos de moi
                   </h5>
                 </div>
                 <p class="lead">
