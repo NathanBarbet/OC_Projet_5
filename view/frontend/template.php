@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <?php require('template/header.php'); ?>
+  <?php require('module/header.php'); ?>
 </head>
 
 <body id="page-top">
 
-  <?php require('template/nav.php'); ?>
+  <?php require('module/nav.php'); ?>
 
   <?php echo $content; ?>
 
-  <?php require('template/contact.php'); ?>
+  <?php require('module/contact.php'); ?>
 
-  <?php require('template/libraries.php'); ?>
+  <?php require('module/libraries.php'); ?>
 
 </body>
 </html>
