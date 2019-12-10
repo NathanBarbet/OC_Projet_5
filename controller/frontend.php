@@ -1,32 +1,32 @@
 <?php
 
-require_once('model/PostManager.php');
-require_once('model/CommentManager.php');
+require_once('model/Post.php');
+require_once('model/Comment.php');
 
 function listPosts()
 {
-    $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+    $post = new Post(); // Création d'un objet
+    $posts = $post->getPosts(); // Appel d'une fonction de cet objet
 
     require('view/frontend/home.php');
 }
 
 function post()
 {
-    $postManager = new PostManager();
-    $commentManager = new CommentManager();
+    $post = new Post();
+    $comment = new Comment();
 
-    $post = $postManager->getPost($_GET['ID']);
-    $comments = $commentManager->getComments($_GET['ID']);
+    $post = $post->getPost($_GET['ID']);
+    $comments = $comment->getComments($_GET['ID']);
 
     require('view/frontend/post.php');
 }
 
 function addComment($postId, $author, $comment)
 {
-    $commentManager = new CommentManager();
+    $comment = new Comment();
 
-    $affectedLines = $commentManager->postComment($postId, $author, $comment);
+    $affectedLines = $comment->postComment($postId, $author, $comment);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
