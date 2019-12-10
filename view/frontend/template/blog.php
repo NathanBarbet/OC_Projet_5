@@ -29,7 +29,7 @@
                    <h6 class="category"><?= htmlspecialchars($data['Title']) ?></h6>
                  </div>
                </div>
-               <h3 class="card-title"><a href="view/frontend/post.php"><?= nl2br(htmlspecialchars($data['Lead'])) ?></a></h3>
+               <h3 class="card-title"><a href="view/frontend/post.php"><?= nl2br(htmlspecialchars($data['Post_lead'])) ?></a></h3>
                <p class="card-description">
                  <?= nl2br(htmlspecialchars($data['Content'])) ?>
                </p>

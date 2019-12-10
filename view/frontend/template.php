@@ -8,13 +8,7 @@
 
   <?php require('template/nav.php'); ?>
 
-  <?php require('template/intro.php'); ?>
-
-  <?php require('template/cv.php'); ?>
-
-  <?php require('template/services.php'); ?>
-
-  <?php require('template/blog.php'); ?>
+  <?php echo $content; ?>
 
   <?php require('template/contact.php'); ?>
 

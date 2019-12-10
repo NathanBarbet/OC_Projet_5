@@ -5,7 +5,7 @@
       <div class="col-md-8">
         <div class="post-box">
           <div class="post-thumb">
-            <img src="public/img/post-1.jpg" class="img-fluid" alt="">
+            <img src="<?= htmlspecialchars($post['Img']) ?>" class="img-fluid" alt="">
           </div>
           <div class="post-meta">
             <h1 class="article-title"><?= htmlspecialchars($post['Title']) ?></h1>
@@ -22,7 +22,7 @@
           </div>
           <div class="article-content">
             <blockquote class="blockquote">
-              <p class="mb-0"><?= $post['Lead'] ?></p>
+              <p class="mb-0"><?= $post['Post_lead'] ?></p>
             </blockquote>
             <p>
               <?= nl2br(htmlspecialchars($post['Content'])) ?>

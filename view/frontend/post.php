@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php require('template/post/post_header.php'); ?>
-</head>
-
-<body>
-    <?php require('template/post/post_nav.php'); ?>
+<?php ob_start(); ?>
 
     <?php require('template/post/post_intro.php'); ?>
 
@@ -17,9 +10,6 @@
 
     <?php require('template/post/post_sidebar.php'); ?>
 
-    <?php require('template/post/post_footer.php'); ?>
+<?php $content = ob_get_clean();  ?>
 
-    <?php require('template/post/post_libraries.php'); ?>
-
-</body>
-</html>
+    <?php require('template.php'); ?>
