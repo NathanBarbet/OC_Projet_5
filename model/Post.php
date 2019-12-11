@@ -17,6 +17,6 @@ class Post extends Db
         if ($post->rowCount() == 1)
           return $post->fetch();
         else
-          throw new Exception ("Aucun ticket");
+          throw new Exception ("Aucun post");
     }
 }
