@@ -2,6 +2,7 @@
 
 require_once 'controller/controllerHome.php';
 require_once 'controller/controllerPost.php';
+require_once 'controller/controllerRegister.php';
 
 class Routeur {
 
@@ -19,6 +20,12 @@ class Routeur {
         if (isset($_GET['action'])) {
             if ($_GET['action'] == 'listPosts') {
                 $this->ctrlHome->listPosts();
+            }
+            elseif ($_GET['action'] == 'register') {
+                require('view/frontend/register.php');
+            }
+            elseif ($_GET['action'] == 'register_confirm') {
+                require('view/frontend/register_confirm.php');
             }
             elseif ($_GET['action'] == 'post') {
                 if (isset($_GET['ID']) && $_GET['ID'] > 0) {
