@@ -25,6 +25,11 @@
           <label> Password : </label><input type='password' name='Password' required/>* <br /> <br />
         </div>
       </div>
+      <div class="col-md-6 mb-3">
+        <div>
+          <label> Confirm Password : </label><input type='password' name='Confirm_Password' required/>* <br /> <br />
+        </div>
+      </div>
       <div class="col-md-12 mb-3">
         <div>
           <input type='submit' name='inscription' value='Inscription' /> <br /> <br />

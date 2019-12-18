@@ -1,12 +1,12 @@
 <?php
-require_once("model/Db.php");
+require_once("model/UserManager.php");
 
-class RegisterUser extends Db
+class User extends UserManager
 {
-    private $name;
-    private $firstname;
-    private $email;
-    private $password;
+    protected $name;
+    protected $firstname;
+    protected $email;
+    protected $password;
 
     public function getName()
     {
@@ -59,13 +59,6 @@ class RegisterUser extends Db
             $hashed_password = password_hash($password_user, PASSWORD_DEFAULT);
             $this->password = $hashed_password;
         }
-    }
-
-    public function addUser()
-    {
-        $sql = 'INSERT INTO users(Name, Firstname, Email, Password, Registration_date, Admin) VALUES(?, ?, ?, ?, NOW(), 0)';
-        $requete = $this->executerRequete($sql, array($this->name, $this->firstname, $this->email, $this->password));
-        return $requete;
     }
 }
 ?>

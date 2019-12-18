@@ -1,20 +1,39 @@
 <?php
-require_once("model/Db.php");
+require_once("model/CommentManager.php");
 
-class Comment extends Db
+class Comment extends CommentManager
 {
+    protected $postId;
+    protected $author;
+    protected $comment;
 
-    public function getComments($postId)
+    public function getPostId()
     {
-        $sql = 'SELECT ID, User_ID, Content, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS Date_publish_fr FROM comments WHERE Post_ID = ? ORDER BY Date_publish DESC';
-        $comments = $this->executerRequete($sql, array($postId));
-        return $comments;
+        return htmlspecialchars($this->postId);
     }
 
-    public function postComment($postId, $author, $comment)
+    public function getAuthor()
     {
-        $sql = 'INSERT INTO comments(Post_ID, User_ID, Content, Date_publish, Comment_statut_ID) VALUES(?, ?, ?, NOW(), 1)';
-        $affectedLines = $this->executerRequete($sql, array($postId, $author, $comment));
-        return $affectedLines;
+        return htmlspecialchars($this->author);
+    }
+
+    public function getComment()
+    {
+        return htmlspecialchars($this->comment);
+    }
+
+    public function setPostId($postId)
+    {
+        $this->postId = $postId;
+    }
+
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+    }
+
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
     }
 }

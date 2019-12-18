@@ -13,19 +13,31 @@ require_once('model/Comment.php');
       $this->comment = new comment() ;
     }
 
-    public function post($postId) {
-      $post = $this->post->getPost($postId);
-      $comments = $this->comment->getComments($postId);
+    public function getPost() {
+
+      $post = new Post();
+      $postId = $_GET['ID'];
+      $post = $post->getPost($postId);
+
+      $comments = new Comment();
+      $postId = $_GET['ID'];
+      $comments = $comments->getComments($postId);
+
       require('view/frontend/post.php');
     }
 
-    public function addComment($postId, $author, $comment) {
-      $affectedLines = $this->comment->postComment($postId, $author, $comment);
-      if ($affectedLines === false) {
-          throw new Exception('Impossible d\'ajouter le commentaire !');
-      }
-      else {
-          header('Location: index.php?action=post&ID=' . $postId);
-      }
+    public function addComment() {
+      $postId = $_GET['ID'];
+      $author = $_POST['author'];
+      $comment = $_POST['comment'];
+
+      $Comment = new Comment;
+      $Comment->setPostId($postId);
+      $Comment->setAuthor($author);
+      $Comment->setComment($comment);
+
+      $Comment->addComment();
+
+      header('Location: index.php?action=post&ID=' . $postId);
     }
   }

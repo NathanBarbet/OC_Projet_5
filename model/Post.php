@@ -1,22 +1,17 @@
 <?php
-require_once("model/Db.php");
+require_once("model/PostManager.php");
 
-class Post extends Db
+class Post extends PostManager
 {
-    public function getPosts()
+    protected $postId;
+
+    public function getPostId()
     {
-        $sql = 'SELECT ID, Title, Post_lead, Content, Img, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS Date_publish_fr FROM posts ORDER BY Date_publish DESC LIMIT 0, 5';
-        $posts = $this->executerRequete ($sql);
-        return $posts;
+        return htmlspecialchars($this->postId);
     }
 
-    public function getPost($postId)
+    public function setPostId($postId)
     {
-        $sql = 'SELECT ID, Title, Post_lead, Content, Img, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS Date_publish_fr FROM posts WHERE ID = ?';
-        $post = $this->executerRequete ($sql, array($postId));
-        if ($post->rowCount() == 1)
-          return $post->fetch();
-        else
-          throw new Exception ("Aucun post");
+        $this->postId = $postId;
     }
 }

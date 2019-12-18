@@ -2,16 +2,18 @@
 
 require_once 'controller/controllerHome.php';
 require_once 'controller/controllerPost.php';
-require_once 'controller/controllerRegister.php';
+require_once 'controller/controllerUser.php';
 
 class Routeur {
 
   private $ctrlHome;
   private $ctrlPost;
+  private $ctrlUser;
 
   public function __construct() {
     $this->ctrlHome = new controllerHome();
     $this->ctrlPost = new controllerPost();
+    $this->ctrlUser = new controllerUser();
   }
 
   // Traite une requête entrante
@@ -21,15 +23,9 @@ class Routeur {
             if ($_GET['action'] == 'listPosts') {
                 $this->ctrlHome->listPosts();
             }
-            elseif ($_GET['action'] == 'register') {
-                require('view/frontend/register.php');
-            }
-            elseif ($_GET['action'] == 'register_confirm') {
-                require('view/frontend/register_confirm.php');
-            }
             elseif ($_GET['action'] == 'post') {
                 if (isset($_GET['ID']) && $_GET['ID'] > 0) {
-                    $this->ctrlPost->post($_GET['ID']);
+                    $this->ctrlPost->getPost();
                 }
                 else {
                     throw new Exception('Aucun identifiant de billet envoyé');
@@ -38,7 +34,7 @@ class Routeur {
             elseif ($_GET['action'] == 'addComment') {
                 if (isset($_GET['ID']) && $_GET['ID'] > 0) {
                     if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                        $this->ctrlPost->addComment($_GET['ID'], $_POST['author'], $_POST['comment']);
+                        $this->ctrlPost->addComment();
                     }
                     else {
                         throw new Exception('Tous les champs ne sont pas remplis !');
@@ -47,6 +43,17 @@ class Routeur {
                 else {
                     throw new Exception('Aucun identifiant de billet envoyé');
                 }
+            }
+            elseif ($_GET['action'] == 'register') {
+                require('view/frontend/register.php');
+            }
+            elseif ($_GET['action'] == 'register_confirm') {
+              if (isset($_POST['Name']) AND isset($_POST['Firstname']) AND isset($_POST['Email']) AND isset($_POST['Password'])) {
+                $this->ctrlUser->addUser();
+              }
+              else {
+                throw new Exception('Tous les champs ne sont pas remplis');
+              }
             }
           }
           else {
