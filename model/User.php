@@ -60,5 +60,13 @@ class User extends UserManager
             $this->password = $hashed_password;
         }
     }
+
+    public function setPasswordLogin($password_user)
+    {
+        if(!empty($password_user) && preg_match('#^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$#', $password_user))
+        {
+            $this->password = $password_user;
+        }
+    }
 }
 ?>

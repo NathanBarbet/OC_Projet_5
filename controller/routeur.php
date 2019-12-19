@@ -33,7 +33,7 @@ class Routeur {
             }
             elseif ($_GET['action'] == 'addComment') {
                 if (isset($_GET['ID']) && $_GET['ID'] > 0) {
-                    if (!empty($_POST['author']) && !empty($_POST['comment'])) {
+                    if (!empty($_SESSION['ID']) && !empty($_POST['comment'])) {
                         $this->ctrlPost->addComment();
                     }
                     else {
@@ -54,6 +54,20 @@ class Routeur {
               else {
                 throw new Exception('Tous les champs ne sont pas remplis');
               }
+            }
+            elseif ($_GET['action'] == 'login') {
+                require('view/frontend/login.php');
+            }
+            elseif ($_GET['action'] == 'login_confirm') {
+              if (isset($_POST['Email']) AND isset($_POST['Password'])) {
+                $this->ctrlUser->logUser();
+              }
+              else {
+                throw new Exception('Tous les champs ne sont pas remplis');
+              }
+            }
+            elseif ($_GET['action'] == 'logout') {
+                require('view/frontend/logout.php');
             }
           }
           else {

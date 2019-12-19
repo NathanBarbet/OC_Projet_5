@@ -4,14 +4,12 @@
       Laisser un commentaire
     </h3>
   </div>
+  <?php
+    if (isset($_SESSION['Name']) AND isset($_SESSION['Firstname']) AND isset($_SESSION['Email']))
+    {
+  ?>
   <form class="form-mf" action="index.php?action=addComment&amp;ID=<?= $post['ID'] ?>" method="post">
     <div class="row">
-      <div class="col-md-6 mb-3">
-        <div>
-          <label for="author">Auteur</label><br />
-          <input type="text" id="author" name="author" />
-        </div>
-      </div>
       <div class="col-md-6 mb-3">
         <div>
           <label for="comment">Commentaire</label><br />
@@ -25,5 +23,12 @@
       </div>
     </div>
   </form>
+<?php }
+  else
+  {
+    echo 'Vous devez être connecté !';
+    echo '<br />  <a href="http://localhost/P5/index.php?action=login"> Cliquer ici</a>';
+  }
+?>
 </div>
 </div>

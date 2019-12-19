@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-    <?php require('module/post/post_intro.php'); ?>
+    <?php require('module/register/register_intro.php'); ?>
 
     <?php require('module/register/register_form.php'); ?>
 

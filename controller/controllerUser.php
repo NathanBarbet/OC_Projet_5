@@ -35,4 +35,18 @@ class controllerUser {
 
     require('view/frontend/register_confirm.php');
   }
+
+  public function logUser() {
+
+    $email_user = htmlspecialchars($_POST['Email']);
+    $password_user = htmlspecialchars($_POST['Password']);
+
+    $User = new User;
+    $User->setEmail($email_user);
+    $User->setPasswordLogin($password_user);
+
+    $User->logUser();
+
+    header('location: index.php');
+  }
 }

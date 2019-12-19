@@ -24,6 +24,26 @@
         <li class="nav-item">
           <a class="nav-link js-scroll" href="#contact">Contact</a>
         </li>
+        <?php
+          if (isset($_SESSION['Name']) AND isset($_SESSION['Firstname']) AND isset($_SESSION['Email']))
+          {
+        ?>
+
+        <li class="nav-item">
+          <?php  echo 'Bonjour ' . $_SESSION['Firstname']; ?>
+        </li>
+
+        <?php } ?>
+        <?php
+          if (isset($_SESSION['Name']) AND isset($_SESSION['Firstname']) AND isset($_SESSION['Email']) AND isset($_SESSION['Admin']) AND $_SESSION['Admin'] == 1)
+          {
+        ?>
+
+        <li class="nav-item">
+          <?php  echo 'Tu es Admin'; ?>
+        </li>
+
+        <?php } ?>
       </ul>
     </div>
   </div>

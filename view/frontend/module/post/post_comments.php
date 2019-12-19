@@ -8,11 +8,8 @@
     {
     ?>
     <li>
-      <div class="comment-avatar">
-        <img src="public/img/testimonial-2.jpg" alt="">
-      </div>
       <div class="comment-details">
-        <h4 class="comment-author"><?= htmlspecialchars($comment['User_ID']) ?></h4>
+        <h4 class="comment-author"><?= htmlspecialchars($comment['Name']) ?> <?= htmlspecialchars($comment['Firstname']) ?></h4>
         <span><?= $comment['Date_publish_fr'] ?></span>
         <p>
           <?= nl2br(htmlspecialchars($comment['Content'])) ?>

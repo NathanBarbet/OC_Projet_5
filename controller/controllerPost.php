@@ -28,7 +28,7 @@ require_once('model/Comment.php');
 
     public function addComment() {
       $postId = $_GET['ID'];
-      $author = $_POST['author'];
+      $author = $_SESSION['ID'];
       $comment = $_POST['comment'];
 
       $Comment = new Comment;
