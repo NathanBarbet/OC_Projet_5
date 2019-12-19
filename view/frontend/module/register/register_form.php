@@ -3,7 +3,7 @@
     <h3 class="title-left">
     </h3>
   </div>
-  <form class="form-mf" action="index.php?action=register_confirm" method="post">
+  <form class="form-mf" action="register_confirm" method="post">
     <div class="row">
       <div class="col-md-6 mb-3">
         <div>

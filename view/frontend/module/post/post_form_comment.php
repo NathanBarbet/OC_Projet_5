@@ -27,7 +27,7 @@
   else
   {
     echo 'Vous devez être connecté !';
-    echo '<br />  <a href="http://localhost/P5/index.php?action=login"> Cliquer ici</a>';
+    echo '<br />  <a href="login"> Cliquer ici</a>';
   }
 ?>
 </div>

@@ -1,0 +1,10 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteRule ^home$ index.php [L]
+RewriteRule ^login$ index.php?action=login [L]
+RewriteRule ^login_confirm$ index.php?action=login_confirm [L]
+RewriteRule ^logout$ index.php?action=logout [L]
+RewriteRule ^register$ index.php?action=register [L]
+RewriteRule ^register_confirm$ index.php?action=register_confirm [L]
+RewriteRule ^post_([0-9]+)$ index.php?action=post&ID=$1 [L]
+RewriteRule ^panel$ index.php?action=panel [L]

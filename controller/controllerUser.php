@@ -47,6 +47,6 @@ class controllerUser {
 
     $User->logUser();
 
-    header('location: index.php');
+    header('location: home');
   }
 }

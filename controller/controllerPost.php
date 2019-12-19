@@ -38,6 +38,6 @@ require_once('model/Comment.php');
 
       $Comment->addComment();
 
-      header('Location: index.php?action=post&ID=' . $postId);
+      header('Location: post_' . $postId);
     }
   }

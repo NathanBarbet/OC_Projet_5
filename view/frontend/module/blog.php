@@ -21,7 +21,7 @@
          <div class="col-md-4">
            <div class="card card-blog">
              <div class="card-img">
-               <a href="index.php?action=post&ID=<?= htmlspecialchars($data['ID']) ?>"><img src="<?= htmlspecialchars($data['Img']) ?>" alt="" class="img-fluid"></a>
+               <a href="post_<?= htmlspecialchars($data['ID']) ?>"><img src="<?= htmlspecialchars($data['Img']) ?>" alt="" class="img-fluid"></a>
              </div>
              <div class="card-body">
                <div class="card-category-box">

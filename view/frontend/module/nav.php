@@ -10,19 +10,19 @@
     <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link js-scroll active" href="#home">Accueil</a>
+          <a class="nav-link js-scroll active" href="home#home">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll" href="#about">A propos</a>
+          <a class="nav-link js-scroll" href="home#about">A propos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll" href="#service">Services</a>
+          <a class="nav-link js-scroll" href="home#service">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll" href="#blog">Blog</a>
+          <a class="nav-link js-scroll" href="home#blog">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll" href="#contact">Contact</a>
+          <a class="nav-link js-scroll" href="home#contact">Contact</a>
         </li>
         <?php
           if (isset($_SESSION['Name']) AND isset($_SESSION['Firstname']) AND isset($_SESSION['Email']))
@@ -40,7 +40,7 @@
         ?>
 
         <li class="nav-item">
-          <?php  echo 'Tu es Admin'; ?>
+          <?php  echo '<a href="panel"> Panel Admin</a>'; ?>
         </li>
 
         <?php } ?>

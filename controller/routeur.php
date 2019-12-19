@@ -69,6 +69,9 @@ class Routeur {
             elseif ($_GET['action'] == 'logout') {
                 require('view/frontend/logout.php');
             }
+            elseif ($_GET['action'] == 'panel') {
+                require('view/frontend/panel.php');
+            }
           }
           else {
               $this->ctrlHome->listPosts();

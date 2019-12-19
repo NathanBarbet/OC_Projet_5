@@ -3,7 +3,11 @@
     <h3 class="title-left">
     </h3>
   </div>
-  <form class="form-mf" action="index.php?action=login_confirm" method="post">
+  <?php
+    if (!isset($_SESSION['Name']) AND !isset($_SESSION['Firstname']) AND !isset($_SESSION['Email']))
+    {
+  ?>
+  <form class="form-mf" action="login_confirm" method="post">
     <div class="row">
       <div class="col-md-6 mb-3">
         <div>
@@ -22,5 +26,11 @@
       </div>
     </div>
   </form>
+<?php }
+else
+{
+  echo 'Vous êtes déjà connecté !';
+}
+?>
 </div>
 </div>
