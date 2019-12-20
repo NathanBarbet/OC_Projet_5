@@ -3,17 +3,20 @@
 require_once 'controller/controllerHome.php';
 require_once 'controller/controllerPost.php';
 require_once 'controller/controllerUser.php';
+require_once 'controller/controllerPanel.php';
 
 class Routeur {
 
   private $ctrlHome;
   private $ctrlPost;
   private $ctrlUser;
+  private $ctrlPanel;
 
   public function __construct() {
     $this->ctrlHome = new controllerHome();
     $this->ctrlPost = new controllerPost();
     $this->ctrlUser = new controllerUser();
+    $this->ctrlPanel = new controllerPanel();
   }
 
   // Traite une requête entrante
@@ -70,7 +73,45 @@ class Routeur {
                 require('view/frontend/logout.php');
             }
             elseif ($_GET['action'] == 'panel') {
-                require('view/frontend/panel.php');
+                $this->ctrlPanel->listPostsPanel();
+            }
+            elseif ($_GET['action'] == 'delpost') {
+                if (isset($_GET['ID']) && $_GET['ID'] > 0 AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1) {
+                    $this->ctrlPanel->delPostPanel();
+                }
+                else {
+                    throw new Exception('Aucun identifiant de billet envoyé');
+                }
+            }
+            elseif ($_GET['action'] == 'addpostpanel') {
+                require('view/frontend/panel_post_add.php');
+            }
+            elseif ($_GET['action'] == 'addpost_confirm')
+            {
+                if (isset($_POST['Title']) AND isset($_POST['Post_lead']) AND isset($_POST['Content']) AND isset($_POST['Img']) AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1)
+                {
+                    $this->ctrlPanel->addPostPanel();
+                }
+                else
+                {
+                    throw new Exception('Aucun identifiant de billet envoyé');
+                }
+            }
+            elseif ($_GET['action'] == 'publishpost') {
+                if (isset($_GET['ID']) && $_GET['ID'] > 0 AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1) {
+                    $this->ctrlPanel->publishPost();
+                }
+                else {
+                    throw new Exception('Aucun identifiant de billet envoyé');
+                }
+            }
+            elseif ($_GET['action'] == 'pausepost') {
+                if (isset($_GET['ID']) && $_GET['ID'] > 0 AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1) {
+                    $this->ctrlPanel->pausePost();
+                }
+                else {
+                    throw new Exception('Aucun identifiant de billet envoyé');
+                }
             }
           }
           else {
