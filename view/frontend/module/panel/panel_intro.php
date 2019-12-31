@@ -1,6 +1,5 @@
 <!--/ Intro Skew Star /-->
-<div class="intro intro-single route bg-image" style="background-image: url(public/img/overlay-bg.jpg)">
-  <div class="overlay-mf"></div>
+<div class="intro intro-single route bg-image" style="background-image: url(public/img/intro-bg.jpg)">
   <div class="intro-content display-table">
     <div class="table-cell">
       <div class="container">

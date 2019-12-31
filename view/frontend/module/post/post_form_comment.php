@@ -10,10 +10,13 @@
   ?>
   <form class="form-mf" action="index.php?action=addComment&amp;ID=<?= $post['ID'] ?>" method="post">
     <div class="row">
-      <div class="col-md-6 mb-3">
+      <div class="col-md-12 mb-3">
         <div>
           <label for="comment">Commentaire</label><br />
-          <textarea id="comment" name="comment"></textarea>
+          <textarea id="comment" rows="20" name="comment"></textarea>
+          <script>
+                CKEDITOR.replace( 'comment' );
+          </script>
         </div>
       </div>
       <div class="col-md-12 mb-3">

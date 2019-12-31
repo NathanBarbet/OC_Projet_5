@@ -1,5 +1,4 @@
-<section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(public/img/overlay-bg.jpg)">
-  <div class="overlay-mf"></div>
+<section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(public/img/intro-bg.jpg)">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">

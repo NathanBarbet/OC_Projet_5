@@ -2,10 +2,10 @@
 <section class="blog-wrapper sect-pt4" id="blog">
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="post-box">
           <div class="post-thumb">
-            <img src="<?= htmlspecialchars($post['Img']) ?>" class="img-fluid" alt="">
+            <img src="<?= htmlspecialchars($post['Img']) ?>" class="img-fluid col-md-12" alt="">
           </div>
           <div class="post-meta">
             <h1 class="article-title"><?= htmlspecialchars($post['Title']) ?></h1>
@@ -22,9 +22,9 @@
           </div>
           <div class="article-content">
             <blockquote class="blockquote">
-              <p class="mb-0"><?= $post['Post_lead'] ?></p>
+              <p class="mb-0 col-md-12"><?= $post['Post_lead'] ?></p>
             </blockquote>
-            <p>
+            <p class="col-md-12">
               <?= nl2br(htmlspecialchars($post['Content'])) ?>
             </p>
           </div>

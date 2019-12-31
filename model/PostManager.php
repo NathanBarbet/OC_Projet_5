@@ -5,9 +5,10 @@ class PostManager extends Db
 {
     public function getPosts()
     {
-        $sql = 'SELECT ID, Title, Post_lead, Content, Img, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS Date_publish_fr FROM posts WHERE Post_statut_ID = 1 ORDER BY Date_publish DESC LIMIT 0, 6';
+        $sql = 'SELECT ID AS postId, Title AS title, Post_lead AS post_lead, Content AS content, Img AS img, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr FROM posts WHERE Post_statut_ID = 1 ORDER BY Date_publish DESC LIMIT 0, 6';
         $requete = $this->executerRequete ($sql);
-        return $requete;
+        $posts = $requete->fetchAll(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, 'Post');
+        return $posts;
     }
 
     public function getPost($postId)

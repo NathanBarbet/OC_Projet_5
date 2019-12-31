@@ -9,32 +9,29 @@ require_once('model/Comment.php');
     private $comment;
 
     public function __construct() {
-      $this->post = new post() ;
-      $this->comment = new comment() ;
+      $this->post = new Post() ;
+      $this->comment = new Comment() ;
     }
 
     public function getPost() {
 
-      $post = new Post();
       $postId = $_GET['ID'];
-      $post = $post->getPost($postId);
+      $post = $this->post->getPost($postId);
 
-      $comments = new Comment();
       $postId = $_GET['ID'];
-      $comments = $comments->getComments($postId);
-
+      $comments = $this->comment->getComments($postId);
       require('view/frontend/post.php');
     }
 
     public function addComment() {
       $postId = $_GET['ID'];
       $author = $_SESSION['ID'];
-      $comment = $_POST['comment'];
+      $content = $_POST['comment'];
 
       $Comment = new Comment;
       $Comment->setPostId($postId);
       $Comment->setAuthor($author);
-      $Comment->setComment($comment);
+      $Comment->setContent($content);
 
       $Comment->addComment();
 

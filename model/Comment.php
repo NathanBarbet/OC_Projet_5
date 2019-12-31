@@ -5,21 +5,34 @@ class Comment extends CommentManager
 {
     protected $postId;
     protected $author;
-    protected $comment;
+    protected $name;
+    protected $firstname;
+    protected $content;
+    protected $date_fr;
 
     public function getPostId()
     {
         return htmlspecialchars($this->postId);
     }
 
-    public function getAuthor()
+    public function getName()
     {
-        return htmlspecialchars($this->author);
+        return htmlspecialchars($this->name);
     }
 
-    public function getComment()
+    public function getFirstname()
     {
-        return htmlspecialchars($this->comment);
+        return htmlspecialchars($this->firstname);
+    }
+
+    public function getContent()
+    {
+        return ($this->content);
+    }
+
+    public function getDate()
+    {
+        return htmlspecialchars($this->date_fr);
     }
 
     public function setPostId($postId)
@@ -32,8 +45,8 @@ class Comment extends CommentManager
         $this->author = $author;
     }
 
-    public function setComment($comment)
+    public function setContent($content)
     {
-        $this->comment = $comment;
+        $this->content = $content;
     }
 }

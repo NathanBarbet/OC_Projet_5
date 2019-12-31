@@ -13,26 +13,23 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row row-eq-height">
       <?php
-         while ($data = $posts->fetch())
+         foreach ($posts as $data)
          {
          ?>
          <div class="col-md-4">
            <div class="card card-blog">
              <div class="card-img">
-               <a href="post_<?= htmlspecialchars($data['ID']) ?>"><img src="<?= htmlspecialchars($data['Img']) ?>" alt="" class="img-fluid"></a>
+               <a href="post_<?= htmlspecialchars($data->getPostId()) ?>"><img src="<?= htmlspecialchars($data->getImg()) ?>" alt="" class="img-fluid"></a>
              </div>
              <div class="card-body">
                <div class="card-category-box">
                  <div class="card-category">
-                   <h6 class="category"><?= htmlspecialchars($data['Title']) ?></h6>
+                   <h6 class="category"><?= htmlspecialchars($data->getTitle()) ?></h6>
                  </div>
                </div>
-               <h3 class="card-title"><a href="view/frontend/post.php"><?= nl2br(htmlspecialchars($data['Post_lead'])) ?></a></h3>
-               <p class="card-description">
-                 <?= nl2br(htmlspecialchars($data['Content'])) ?>
-               </p>
+               <h3 class="card-title"><a href="view/frontend/post.php"><?= nl2br(htmlspecialchars($data->getPost_lead())) ?></a></h3>
              </div>
              <div class="card-footer">
                <div class="post-author">
@@ -42,14 +39,14 @@
                  </a>
                </div>
                <div class="post-date">
-                 <span class="ion-ios-clock-outline"></span>le <?= $data['Date_publish_fr'] ?>
+                 <span class="ion-ios-clock-outline"></span>le <?= nl2br(htmlspecialchars($data->getDate())) ?>
                </div>
              </div>
            </div>
          </div>
          <?php
          }
-         $posts->closeCursor();
+      //   $posts->closeCursor();
          ?>
       </div>
     </div>

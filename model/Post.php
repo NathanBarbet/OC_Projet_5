@@ -8,6 +8,7 @@ class Post extends PostManager
     protected $post_lead;
     protected $content;
     protected $img;
+    protected $date_fr;
 
     public function getPostId()
     {
@@ -32,6 +33,11 @@ class Post extends PostManager
     public function getImg()
     {
         return htmlspecialchars($this->img);
+    }
+
+    public function getDate()
+    {
+        return htmlspecialchars($this->date_fr);
     }
 
     public function setPostId($postId)

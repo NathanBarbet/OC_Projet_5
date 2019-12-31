@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="ckeditor/ckeditor.js"></script>
   <?php require('module/header.php'); ?>
 </head>
 
