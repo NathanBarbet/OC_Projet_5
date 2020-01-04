@@ -36,6 +36,18 @@
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
+          <div class="blockquote-footer">
+            <span>Doit contenir :</span>
+          </div>
+          <div class="blockquote-footer">
+            <span>Minimum 8 caractères</span>
+          </div>
+          <div class="blockquote-footer">
+            <span>Majuscule et miniscule</span>
+          </div>
+          <div class="blockquote-footer">
+            <span>Chiffres</span>
+          </div>
           </br>
 
           <div class="wrap-input100 rs1 validate-input" data-validate="Password is required">

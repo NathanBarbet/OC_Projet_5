@@ -34,9 +34,7 @@
                 <td><?= htmlspecialchars($data->getFirstname()) ?></td>
                 <td><?= htmlspecialchars($data->getPostTitle()) ?></td>
                 <td><?= htmlspecialchars($data->getDate()) ?></td>
-                <td><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#commentaire">
-                      Voir le commentaire
-                    </button></td>
+                <td><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#message<?php echo $data->getCommentId();?>">Voir le commentaire</button></td>
                 <td><?php
                       if ($data->getCommentStatutID() == 1)
                       {
@@ -60,24 +58,26 @@
                   </div>
                 </td>
              </tr>
-             <div class="modal fade" id="commentaire" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Commentaire</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <?= $data->getContent() ?>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+             <div id="message<?php echo $data->getCommentId();?>" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title title-box text-center">Commentaire</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+        <?php echo $data->getContent();?>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+
+  </div>
+</div>
         <?php
       }
         ?>

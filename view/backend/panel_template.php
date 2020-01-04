@@ -5,15 +5,13 @@
     <script>
       tinymce.init({
         selector: '#post_lead',
-        plugins: "emoticons",
-        toolbar: "emoticons"
+              toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | fontselect fontsizeselect forecolor'
       });
     </script>
     <script>
       tinymce.init({
         selector: '#post',
-        plugins: "emoticons",
-        toolbar: "emoticons"
+              toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | fontselect fontsizeselect forecolor'
       });
     </script>
     <?php require('module/header.php'); ?>

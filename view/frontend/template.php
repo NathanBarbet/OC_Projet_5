@@ -5,9 +5,8 @@
   <script>
     tinymce.init({
       selector: '#comment',
-      plugins: "emoticons",
-      toolbar: "emoticons"
-    });
+      toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | fontselect fontsizeselect forecolor'
+      });
   </script>
   <?php require('module/header.php'); ?>
 </head>
