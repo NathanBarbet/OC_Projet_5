@@ -21,26 +21,14 @@
                 </div>
               </div>
               <div class="skill-mf">
-                <p class="title-s">Skill</p>
-                <span>HTML</span> <span class="pull-right">85%</span>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
-                    aria-valuemax="100"></div>
-                </div>
-                <span>CSS3</span> <span class="pull-right">75%</span>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                    aria-valuemax="100"></div>
-                </div>
-                <span>PHP</span> <span class="pull-right">50%</span>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                    aria-valuemax="100"></div>
-                </div>
-                <span>JAVASCRIPT</span> <span class="pull-right">90%</span>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-                    aria-valuemax="100"></div>
+                <p class="title-s">Compétences</p>
+                <span></span>
+                <div>
+                  <div>
+                    <img class="p-1" src="public/img/logohtml.png" width="100" height="80">
+                    <img class="p-1" src="public/img/logocss.png" width="80" height="80">
+                    <img class="p-1" src="public/img/logophp.png" width="120" height="80">
+                  </div>
                 </div>
               </div>
             </div>

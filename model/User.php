@@ -7,6 +7,8 @@ class User extends UserManager
     protected $firstname;
     protected $email;
     protected $password;
+    protected $date_register;
+    protected $user_ID;
 
     public function getName()
     {
@@ -26,6 +28,16 @@ class User extends UserManager
     public function getPassword()
     {
         return htmlspecialchars($this->password);
+    }
+
+    public function getDateRegister()
+    {
+        return htmlspecialchars($this->date_register);
+    }
+
+    public function getUserID()
+    {
+        return htmlspecialchars($this->user_ID);
     }
 
     public function setName($name_user)

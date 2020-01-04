@@ -30,10 +30,10 @@
         ?>
 
         <li class="nav-item">
-          <?php  echo '<a href="login"> Login</a>'; ?>
+          <?php  echo '<a class="nav-link" href="login"> Login</a>'; ?>
         </li>
         <li class="nav-item">
-          <?php  echo '<a href="register"> Register</a>'; ?>
+          <?php  echo '<a class="nav-link" href="register"> Register</a>'; ?>
         </li>
 
         <?php } ?>
@@ -43,10 +43,7 @@
         ?>
 
         <li class="nav-item">
-          <?php  echo 'Bonjour ' . $_SESSION['Firstname']; ?>
-        </li>
-        <li class="nav-item">
-          <?php  echo '<a href="logout"> Logout</a>'; ?>
+          <?php  echo '<a class="nav-link" href="logout"> Logout</a>'; ?>
         </li>
 
         <?php } ?>
@@ -56,7 +53,7 @@
         ?>
 
         <li class="nav-item">
-          <?php  echo '<a href="panel"> Panel Admin</a>'; ?>
+          <?php  echo '<a class="nav-link" href="panel"> Panel Admin</a>'; ?>
         </li>
 
         <?php } ?>

@@ -10,6 +10,21 @@ class UserManager extends db
         return $requete;
     }
 
+    public function getUsersPanel()
+    {
+        $sql = "SELECT ID AS user_ID, Name AS name, Firstname AS firstname, Email AS email, DATE_FORMAT(Registration_date, '%d/%m/%Y à %Hh%imin%ss') AS date_register FROM users ORDER BY Registration_date DESC";
+        $requete = $this->executerRequete($sql);
+        $users = $requete->fetchAll(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, 'User');
+        return $users;
+    }
+
+    public function delUserPanel($user_ID)
+    {
+        $sql = 'DELETE FROM users WHERE ID = ?';
+        $requete = $this->executerRequete ($sql, array($user_ID));
+        return $requete;
+    }
+
     public function logUser()
     {
       $sql = 'SELECT ID, Name, Firstname, Email, Password, Admin FROM users WHERE Email = :Email';

@@ -13,18 +13,34 @@ class PostManager extends Db
 
     public function getPost($postId)
     {
-        $sql = 'SELECT ID, Title, Post_lead, Content, Img, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS Date_publish_fr FROM posts WHERE ID = ? AND Post_statut_ID = 1';
-        $requete = $this->executerRequete ($sql, array($postId));
-        if ($requete->rowCount() == 1)
-          return $requete->fetch();
-        else
-          throw new Exception ("Aucun post");
+        $sql = "SELECT ID AS postId, Title AS title, Post_lead AS post_lead, Content AS content, Img AS img, DATE_FORMAT(Date_publish, '%d/%m/%Y à %Hh%imin%ss') AS date_fr, DATE_FORMAT(Date_modify, '%d/%m/%Y à %Hh%imin%ss') AS date_modify_fr FROM posts WHERE ID = ".$postId." AND Post_statut_ID = 1";
+        $requete = $this->executerRequete($sql);
+        $post = $requete->fetchAll(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, 'Post');
+        return $post;
     }
 
     public function getPostsPanel()
     {
-        $sql = 'SELECT posts.ID, Title, Post_lead, Content, Img, Post_statut, Post_statut_ID, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS Date_publish_fr FROM posts INNER JOIN posts_statut ON posts.Post_statut_ID = posts_statut.ID ORDER BY Date_publish';
-        $requete = $this->executerRequete ($sql);
+        $sql = 'SELECT posts.ID AS postId, Title AS title, Post_statut AS post_statut, Post_statut_ID AS post_statut_ID, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr FROM posts INNER JOIN posts_statut ON posts.Post_statut_ID = posts_statut.ID ORDER BY Date_publish';
+        $requete = $this->executerRequete($sql);
+        $posts = $requete->fetchAll(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, 'Post');
+        return $posts;
+    }
+
+    public function addPostPanel()
+    {
+        $sql = 'INSERT INTO posts(Title, Post_lead, Content, Img, Date_publish, Post_statut_ID, User_ID) VALUES(?, ?, ?, ?, NOW(), 1, 1)';
+        $requete = $this->executerRequete($sql, array($this->title, $this->post_lead, $this->content, $this->img));
+        return $requete;
+    }
+
+    public function editPostPanel($postId, $title, $post_lead, $content, $img)
+    {
+        $sql = "UPDATE posts
+                SET
+                Title = '".$title."', Post_lead = '".$post_lead."', Content = '".$content."', Img = '".$img."', Date_modify = NOW()
+                WHERE ID = '".$postId."'";
+        $requete = $this->executerRequete($sql);
         return $requete;
     }
 

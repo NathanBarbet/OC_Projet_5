@@ -3,20 +3,24 @@
     <h3 class="title-left">
       Laisser un commentaire
     </h3>
+  </br>
+    <h6>
+      Votre commentaire sera publier après validation de l'administrateur
+    </h6>
   </div>
   <?php
     if (isset($_SESSION['Name']) AND isset($_SESSION['Firstname']) AND isset($_SESSION['Email']))
     {
   ?>
-  <form class="form-mf" action="index.php?action=addComment&amp;ID=<?= $post['ID'] ?>" method="post">
+  <?php
+  foreach ($post as $data)
+  {
+  ?>
+  <form class="form-mf" action="index.php?action=addComment&amp;ID=<?= $data->getPostId() ?>" method="post">
     <div class="row">
       <div class="col-md-12 mb-3">
         <div>
-          <label for="comment">Commentaire</label><br />
           <textarea id="comment" rows="20" name="comment"></textarea>
-          <script>
-                CKEDITOR.replace( 'comment' );
-          </script>
         </div>
       </div>
       <div class="col-md-12 mb-3">
@@ -26,6 +30,7 @@
       </div>
     </div>
   </form>
+<?php } ?>
 <?php }
   else
   {

@@ -8,40 +8,39 @@
               <div class="col-md-6">
                 <div class="title-box-2">
                   <h5 class="title-left">
-                    Send Message Us
+                    Envoyer un message
                   </h5>
                 </div>
                 <div>
-                    <form action="" method="post" role="form" class="contactForm">
-                    <div id="sendmessage">Your message has been sent. Thank you!</div>
+                    <form action="sendcontact" method="post" enctype="application/x-www-form-urlencoded" name="formulaire">
                     <div id="errormessage"></div>
                     <div class="row">
                       <div class="col-md-12 mb-3">
                         <div class="form-group">
-                          <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                          <input type="text" name="nom" class="form-control" id="name" placeholder="Nom" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                           <div class="validation"></div>
                         </div>
                       </div>
                       <div class="col-md-12 mb-3">
                         <div class="form-group">
-                          <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                          <input type="email" class="form-control" name="mail" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
                           <div class="validation"></div>
                         </div>
                       </div>
                       <div class="col-md-12 mb-3">
                           <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <input type="text" class="form-control" name="objet" id="subject" placeholder="Objet" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                             <div class="validation"></div>
                           </div>
                       </div>
                       <div class="col-md-12 mb-3">
                         <div class="form-group">
-                          <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                          <textarea class="form-control" name="message" rows="5" data-rule="required" placeholder="Message"></textarea>
                           <div class="validation"></div>
                         </div>
                       </div>
                       <div class="col-md-12">
-                        <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
+                        <button type="submit" name="submit" class="button button-a button-big button-rouded">Envoyer</button>
                       </div>
                     </div>
                   </form>
@@ -50,7 +49,7 @@
               <div class="col-md-6">
                 <div class="title-box-2 pt-4 pt-md-0">
                   <h5 class="title-left">
-                    Get in Touch
+                    Informations
                   </h5>
                 </div>
                 <div class="more-info">
@@ -61,9 +60,9 @@
                     mollitia inventore?
                   </p>
                   <ul class="list-ico">
-                    <li><span class="ion-ios-location"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
-                    <li><span class="ion-ios-telephone"></span> (617) 557-0089</li>
-                    <li><span class="ion-email"></span> contact@example.com</li>
+                    <li><span class="ion-ios-location"></span> 28 allée du Mail, 92360, Meudon</li>
+                    <li><span class="ion-ios-telephone"></span> 06.67.56.90.07</li>
+                    <li><span class="ion-email"></span> nathan.barbet@hotmail.fr</li>
                   </ul>
                 </div>
                 <div class="socials">

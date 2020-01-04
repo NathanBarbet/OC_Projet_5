@@ -9,6 +9,9 @@ class Post extends PostManager
     protected $content;
     protected $img;
     protected $date_fr;
+    protected $date_modify_fr;
+    protected $post_statut;
+    protected $post_statut_ID;
 
     public function getPostId()
     {
@@ -22,12 +25,12 @@ class Post extends PostManager
 
     public function getPost_lead()
     {
-        return htmlspecialchars($this->post_lead);
+        return ($this->post_lead);
     }
 
     public function getContent()
     {
-        return htmlspecialchars($this->content);
+        return ($this->content);
     }
 
     public function getImg()
@@ -38,6 +41,21 @@ class Post extends PostManager
     public function getDate()
     {
         return htmlspecialchars($this->date_fr);
+    }
+
+    public function getDateModify()
+    {
+        return htmlspecialchars($this->date_modify_fr);
+    }
+
+    public function getPostStatut()
+    {
+        return htmlspecialchars($this->post_statut);
+    }
+
+    public function getPostStatutID()
+    {
+        return htmlspecialchars($this->post_statut_ID);
     }
 
     public function setPostId($postId)

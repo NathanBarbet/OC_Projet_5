@@ -26,14 +26,13 @@
              <div class="card-body">
                <div class="card-category-box">
                  <div class="card-category">
-                   <h6 class="category"><?= htmlspecialchars($data->getTitle()) ?></h6>
+                   <h6 class="category"><?=$data->getTitle() ?></h6>
                  </div>
                </div>
-               <h3 class="card-title"><a href="view/frontend/post.php"><?= nl2br(htmlspecialchars($data->getPost_lead())) ?></a></h3>
+               <h3 class="card-title"><a href="post_<?= htmlspecialchars($data->getPostId()) ?>"><?= $data->getPost_lead() ?></a></h3>
              </div>
              <div class="card-footer">
                <div class="post-author">
-                 <a href="#">
                    <img src="https://user.oc-static.com/users/avatars/15620576259606_Image%20petit.png" alt="" class="avatar rounded-circle">
                    <span class="author">Barbet Nathan</span>
                  </a>

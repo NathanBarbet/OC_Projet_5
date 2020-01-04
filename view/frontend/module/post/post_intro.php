@@ -3,16 +3,12 @@
   <div class="intro-content display-table">
     <div class="table-cell">
       <div class="container">
-        <h2 class="intro-title mb-4">Blog Details</h2>
-        <ol class="breadcrumb d-flex justify-content-center">
-          <li class="breadcrumb-item">
-            <a href="#">Home</a>
-          </li>
-          <li class="breadcrumb-item">
-            <a href="#">Library</a>
-          </li>
-          <li class="breadcrumb-item active">Data</li>
-        </ol>
+        <?php
+        foreach ($post as $data)
+        {
+        ?>
+        <h2 class="intro-title mb-4"><?= $data->getTitle()?></h2>
+      <?php } ?>
       </div>
     </div>
   </div>
