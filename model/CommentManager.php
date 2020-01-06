@@ -20,7 +20,7 @@ class CommentManager extends Db
 
     public function getCommentsPanel()
     {
-        $sql = "SELECT comments.ID AS commentId, posts.Title AS posttitle, Name AS name, Firstname AS firstname, comments.Content AS content, DATE_FORMAT(comments.Date_publish, '%d/%m/%Y à %Hh%imin%ss') AS date_fr, Comment_statut AS comment_statut, Comment_statut_ID AS comment_statut_ID FROM comments INNER JOIN users ON comments.User_ID = users.ID INNER JOIN comments_statut ON comments.Comment_statut_ID = comments_statut.ID INNER JOIN posts ON comments.Post_ID = posts.ID ORDER BY comments.Date_publish DESC";
+        $sql = "SELECT comments.ID AS commentId, posts.ID AS postId, posts.Title AS posttitle, Name AS name, Firstname AS firstname, comments.Content AS content, DATE_FORMAT(comments.Date_publish, '%d/%m/%Y à %Hh%imin%ss') AS date_fr, Comment_statut AS comment_statut, Comment_statut_ID AS comment_statut_ID FROM comments INNER JOIN users ON comments.User_ID = users.ID INNER JOIN comments_statut ON comments.Comment_statut_ID = comments_statut.ID INNER JOIN posts ON comments.Post_ID = posts.ID ORDER BY comments.Date_publish DESC";
         $requete = $this->executerRequete ($sql);
         $comments = $requete->fetchAll(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, 'Comment');
         return $comments;

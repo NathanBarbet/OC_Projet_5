@@ -34,10 +34,30 @@
                 <td><?= htmlspecialchars($data->getDateRegister()) ?></td>
                 <td>
                   <div>
-                    <a href="deluser_<?= htmlspecialchars($data->getUserID()) ?>"> <input type="button" value="Delete"> </a>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#delete<?php echo $data->getUserID();?>">Supprimer</button>
                   </div>
                 </td>
              </tr>
+             <div id="delete<?php echo $data->getUserID();?>" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <!-- Modal content-->
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h4 class="modal-title title-box text-center">Etes vous sur ?</h4>
+                 </div>
+                 <div class="modal-body">
+                 </div>
+                 <div class="modal-footer">
+                   <div>
+                     <a href="deluser_<?= htmlspecialchars($data->getUserID()) ?>"> <input type="button" value="Oui"> </a>
+                   </div>
+                   <div>
+                     <a href="#"> <input type="button" data-dismiss="modal" value="Annuler"> </a>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
         <?php
       }
         ?>

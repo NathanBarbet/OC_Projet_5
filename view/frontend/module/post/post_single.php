@@ -29,7 +29,7 @@
                   if ($data->getDateModify() != null)
                   {
                 ?>
-                <h6>(Modifier le :<?= $data->getDateModify()?>)</h6>
+                <h6>(Modifier le : <?= $data->getDateModify()?>)</h6>
               <?php } ?>
               </li>
             </ul>

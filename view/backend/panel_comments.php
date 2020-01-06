@@ -32,7 +32,7 @@
              <tr>
                 <td><?= htmlspecialchars($data->getName()) ?></td>
                 <td><?= htmlspecialchars($data->getFirstname()) ?></td>
-                <td><?= htmlspecialchars($data->getPostTitle()) ?></td>
+                <td><a href="post_<?= htmlspecialchars($data->getPostId()) ?>"> <?= htmlspecialchars($data->getPostTitle()) ?></td>
                 <td><?= htmlspecialchars($data->getDate()) ?></td>
                 <td><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#message<?php echo $data->getCommentId();?>">Voir le commentaire</button></td>
                 <td><?php
@@ -54,30 +54,52 @@
                 </td>
                 <td>
                   <div>
-                    <a href="delcomment_<?= htmlspecialchars($data->getCommentId()) ?>"> <input type="button" value="Delete"> </a>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#delete<?php echo $data->getCommentId();?>">Supprimer</button>
                   </div>
                 </td>
              </tr>
              <div id="message<?php echo $data->getCommentId();?>" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+            <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title title-box text-center">Commentaire</h4>
-      </div>
-      <div class="modal-body">
-        <p>
-        <?php echo $data->getContent();?>
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-      </div>
-    </div>
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title title-box text-center">Commentaire</h4>
+                </div>
+                <div class="modal-body">
+                  <p>
+                  <?php echo $data->getContent();?>
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                </div>
+              </div>
 
-  </div>
-</div>
+            </div>
+          </div>
+          <div id="delete<?php echo $data->getCommentId();?>" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title title-box text-center">Etes vous sur ?</h4>
+              </div>
+              <div class="modal-body">
+              </div>
+              <div class="modal-footer">
+                <div>
+                  <a href="delcomment_<?= htmlspecialchars($data->getCommentId()) ?>"> <input type="button" value="Oui"> </a>
+                </div>
+                <div>
+                  <a href="#"> <input type="button" data-dismiss="modal" value="Annuler"> </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
         <?php
       }
         ?>

@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-md-12 mb-3">
                   <div>
-                    <label>Résumé</label><textarea id=post_lead type='textarea' cols="100" rows="10" name='Post_lead' placeholder="Résumé" required/></textarea> <br />
+                    <label>Résumé</label><textarea id=post_lead type='textarea' cols="100" rows="10" name='Post_lead' placeholder="Résumé"></textarea> <br />
                     <script>
                           CKEDITOR.replace( 'post_lead' );
                     </script>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-12 mb-3">
                   <div>
-                    <label>Post</label><textarea id=post type='textarea' cols="100" rows="20" name='Content' placeholder="Post" required/></textarea> <br />
+                    <label>Post</label><textarea id=post type='textarea' cols="100" rows="20" name='Content' placeholder="Post"></textarea> <br />
                     <script>
                           CKEDITOR.replace( 'post' );
                     </script>
