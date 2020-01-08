@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-md-12 mb-3">
                   <div>
-                    <input type='submit' name='valider' value='Valider' /> <br /> <br />
+                    <input type='submit' class="btn btn-primary btn-lg" name='valider' value='Valider' /> <br /> <br />
                   </div>
                 </div>
               </div>

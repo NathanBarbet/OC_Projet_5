@@ -13,8 +13,7 @@
     {
   ?>
   <?php
-  foreach ($post as $data)
-  {
+  $data = $post;
   ?>
   <form class="form-mf" action="index.php?action=addComment&amp;ID=<?= $data->getPostId() ?>" method="post">
     <div class="row">
@@ -25,12 +24,11 @@
       </div>
       <div class="col-md-12 mb-3">
         <div>
-          <input type="submit" />
+          <input type="submit" class="btn btn-primary btn-lg" />
         </div>
       </div>
     </div>
   </form>
-<?php } ?>
 <?php }
   else
   {

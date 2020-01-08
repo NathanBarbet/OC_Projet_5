@@ -22,3 +22,4 @@ RewriteRule ^editpostconfirm_([0-9]+)$ index.php?action=editpostconfirm&ID=$1 [L
 RewriteRule ^panel_users$ index.php?action=panel_users [L]
 RewriteRule ^deluser_([0-9]+)$ index.php?action=deluser&ID=$1 [L]
 RewriteRule ^sendcontact$ index.php?action=sendcontact [L]
+RewriteRule ^allposts$ index.php?action=listAllPosts [L]

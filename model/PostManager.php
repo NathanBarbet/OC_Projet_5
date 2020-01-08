@@ -11,11 +11,21 @@ class PostManager extends Db
         return $posts;
     }
 
+    public function getAllPosts()
+    {
+        $sql = "SELECT ID AS postId, Title AS title, Post_lead AS post_lead, Content AS content, Img AS img, DATE_FORMAT(Date_publish, '%d/%m/%Y à %Hh%imin%ss') AS date_fr, DATE_FORMAT(Date_modify, '%d/%m/%Y à %Hh%imin%ss') AS date_modify_fr FROM posts WHERE Post_statut_ID = 1 ORDER BY Date_publish DESC";
+        $requete = $this->executerRequete ($sql);
+        $posts = $requete->fetchAll(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, 'Post');
+        return $posts;
+    }
+
     public function getPost($postId)
     {
         $sql = "SELECT ID AS postId, Title AS title, Post_lead AS post_lead, Content AS content, Img AS img, DATE_FORMAT(Date_publish, '%d/%m/%Y à %Hh%imin%ss') AS date_fr, DATE_FORMAT(Date_modify, '%d/%m/%Y à %Hh%imin%ss') AS date_modify_fr FROM posts WHERE ID = ".$postId." AND Post_statut_ID = 1";
         $requete = $this->executerRequete($sql);
-        $post = $requete->fetchAll(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, 'Post');
+      //  $post = $requete->fetch(\PDO::FETCH_CLASS, 'Post');
+        $requete->setFetchMode(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, 'Post');
+        $post = $requete->fetch();
         return $post;
     }
 

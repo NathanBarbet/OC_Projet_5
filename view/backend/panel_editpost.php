@@ -9,8 +9,7 @@
             <h3 class="title-a">
               Modifier un post
               <?php
-                 foreach ($post as $data)
-                 {
+                 $data = $post;
                  ?>
             </h3>
             <form class="form-mf" action="editpostconfirm_<?= $data->getPostId() ?>" method="post">
@@ -35,10 +34,9 @@
                     <label>Post</label><textarea id=post type='textarea' cols="100" rows="20" name='Content' required/><?php echo $data->getContent() ?></textarea> <br />
                   </div>
                 </div>
-              <?php } ?>
                 <div class="col-md-12 mb-3">
                   <div>
-                    <input type='submit' name='valider' value='Valider' /> <br /> <br />
+                    <input type='submit' class="btn btn-primary btn-lg" name='valider' value='Valider' /> <br /> <br />
                   </div>
                 </div>
               </div>

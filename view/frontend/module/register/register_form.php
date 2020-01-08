@@ -58,7 +58,7 @@
           </br>
 
 					<div class="container-login100-form-btn m-t-20">
-							<input type='submit' name='inscription' value='Valider' />
+							<input type='submit' class="btn btn-primary btn-lg" name='inscription' value='Valider' />
 					</div>
 				</form>
 			</div>

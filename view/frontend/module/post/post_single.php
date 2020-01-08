@@ -4,8 +4,7 @@
     <div class="row">
       <div class="col-md-12">
         <?php
-        foreach ($post as $data)
-        {
+        $data = $post;
         ?>
         <div class="post-box">
           <div class="post-thumb">
@@ -43,4 +42,3 @@
             </p>
           </div>
         </div>
-      <?php } ?>

@@ -34,7 +34,7 @@
                 <td><?= htmlspecialchars($data->getDateRegister()) ?></td>
                 <td>
                   <div>
-                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#delete<?php echo $data->getUserID();?>">Supprimer</button>
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#delete<?php echo $data->getUserID();?>">Supprimer</button>
                   </div>
                 </td>
              </tr>
@@ -49,10 +49,10 @@
                  </div>
                  <div class="modal-footer">
                    <div>
-                     <a href="deluser_<?= htmlspecialchars($data->getUserID()) ?>"> <input type="button" value="Oui"> </a>
+                     <a href="deluser_<?= htmlspecialchars($data->getUserID()) ?>"> <input type="button" class="btn btn-primary btn-lg" value="Oui"> </a>
                    </div>
                    <div>
-                     <a href="#"> <input type="button" data-dismiss="modal" value="Annuler"> </a>
+                     <a href="#"> <input type="button" class="btn btn-primary btn-lg" data-dismiss="modal" value="Annuler"> </a>
                    </div>
                  </div>
                </div>

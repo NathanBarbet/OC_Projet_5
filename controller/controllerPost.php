@@ -23,6 +23,11 @@ require_once('model/Comment.php');
       require('view/frontend/post.php');
     }
 
+    public function listAllPosts() {
+      $posts = $this->post->getAllPosts();
+      require('view/frontend/allposts.php');
+    }
+
     public function addComment() {
       $postId = $_GET['ID'];
       $author = $_SESSION['ID'];
