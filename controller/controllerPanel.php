@@ -1,6 +1,6 @@
 <?php
 
-require_once('model/Post.php');
+require_once 'model/Post.php';
 
 class controllerPanel {
 
@@ -16,12 +16,12 @@ class controllerPanel {
 
   public function listPostsPanel() {
     $posts = $this->post->getPostsPanel();
-    require'view/backend/panel_posts.php';
+    require 'view/backend/panel_posts.php';
   }
 
   public function listUsersPanel() {
     $users = $this->user->getUsersPanel();
-    require'view/backend/panel_users.php';
+    require 'view/backend/panel_users.php';
   }
 
   public function delUserPanel() {
@@ -36,12 +36,12 @@ class controllerPanel {
 
     $postId = $_GET['ID'];
     $post = $this->post->getPost($postId);
-    require'view/backend/panel_editpost.php';
+    require 'view/backend/panel_editpost.php';
   }
 
   public function listCommentsPanel() {
     $comments = $this->comment->getCommentsPanel();
-    require'view/backend/panel_comments.php';
+    require 'view/backend/panel_comments.php';
   }
 
   public function delPostPanel() {

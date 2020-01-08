@@ -51,7 +51,7 @@ class Routeur {
                 }
             }
             elseif ($_GET['action'] == 'register') {
-                require'view/frontend/register.php';
+                require 'view/frontend/register.php';
             }
             elseif ($_GET['action'] == 'register_confirm') {
               if (isset($_POST['Name']) AND isset($_POST['Firstname']) AND isset($_POST['Email']) AND isset($_POST['Password'])) {
@@ -62,7 +62,7 @@ class Routeur {
               }
             }
             elseif ($_GET['action'] == 'login') {
-                require'view/frontend/login.php';
+                require 'view/frontend/login.php';
             }
             elseif ($_GET['action'] == 'login_confirm') {
               if (isset($_POST['Email']) AND isset($_POST['Password'])) {
@@ -73,7 +73,7 @@ class Routeur {
               }
             }
             elseif ($_GET['action'] == 'logout') {
-                require'view/frontend/logout.php';
+                require 'view/frontend/logout.php';
             }
             elseif ($_GET['action'] == 'panel') {
                 $this->ctrlPanel->listPostsPanel();
@@ -87,7 +87,7 @@ class Routeur {
                 }
             }
             elseif ($_GET['action'] == 'addpostpanel') {
-                require'view/backend/panel_addpost.php';
+                require 'view/backend/panel_addpost.php';
             }
             elseif ($_GET['action'] == 'addpost_confirm')
             {
@@ -169,7 +169,7 @@ class Routeur {
                 }
             }
             elseif ($_GET['action'] == 'sendcontact') {
-                require'view/frontend/sendcontact.php';
+                require 'view/frontend/sendcontact.php';
             }
           }
           else {
