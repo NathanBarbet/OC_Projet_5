@@ -44,9 +44,11 @@
            </div>
          </div>
          <?php
-         }
-      //   $posts->closeCursor();
+       }
          ?>
+      </div>
+      <div class="text-center">
+        <a href="allposts" class="btn btn-primary btn-lg" role="button">Voir plus</a>
       </div>
     </div>
 </section>

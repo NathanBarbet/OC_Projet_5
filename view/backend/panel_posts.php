@@ -15,7 +15,7 @@
       </div>
       </br></br>
       <div>
-        <a href="addpost"> <input type="button" value="Ajouter un post"> </a>
+        <a href="addpost"> <input type="button" class="btn btn-primary btn-lg" value="Ajouter un post"> </a>
       </div>
     </br></br>
       <div class="row">
@@ -41,7 +41,7 @@
                       {
                         ?>
                     <div>
-                      <a href="pausepost_<?= htmlspecialchars($data->getPostId()) ?>"> <input type="button" value="Mettre en attente"> </a>
+                      <a href="pausepost_<?= htmlspecialchars($data->getPostId()) ?>"> <input type="button" class="btn btn-primary btn-lg" value="Mettre en attente"> </a>
                     </div>
                     <?php } ?>
                     <?php
@@ -49,24 +49,23 @@
                       {
                         ?>
                         <div>
-                          <a href="publishpost_<?= htmlspecialchars($data->getPostId()) ?>"> <input type="button" value="Publier"> </a>
+                          <a href="publishpost_<?= htmlspecialchars($data->getPostId()) ?>"> <input type="button" class="btn btn-primary btn-lg" value="Publier"> </a>
                         </div>
                       <?php } ?>
                 </td>
                 <td>
                   <div>
-                    <a href="editpost_<?= htmlspecialchars($data->getPostId()) ?>"> <input type="button" value="Modifier"> </a>
+                    <a href="editpost_<?= htmlspecialchars($data->getPostId()) ?>"> <input type="button" class="btn btn-primary btn-lg" value="Modifier"> </a>
                   </div>
                 </td>
                 <td>
                   <div>
-                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#delete<?php echo $data->getPostId();?>">Supprimer</button>
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#delete<?php echo $data->getPostId();?>">Supprimer</button>
                   </div>
                 </td>
              </tr>
              <div id="delete<?php echo $data->getPostId();?>" class="modal fade" role="dialog">
              <div class="modal-dialog">
-
                <!-- Modal content-->
                <div class="modal-content">
                  <div class="modal-header">
@@ -76,14 +75,13 @@
                  </div>
                  <div class="modal-footer">
                    <div>
-                     <a href="delpost_<?= htmlspecialchars($data->getPostId()) ?>"> <input type="button" value="Oui"> </a>
+                     <a href="delpost_<?= htmlspecialchars($data->getPostId()) ?>"> <input type="button" class="btn btn-primary btn-lg" value="Oui"> </a>
                    </div>
                    <div>
-                     <a href="#"> <input type="button" data-dismiss="modal" value="Annuler"> </a>
+                     <a href="#"> <input type="button" class="btn btn-primary btn-lg" data-dismiss="modal" value="Annuler"> </a>
                    </div>
                  </div>
                </div>
-
              </div>
            </div>
         <?php

@@ -28,7 +28,7 @@
           </br>
 
 					<div class="container-login100-form-btn m-t-20">
-						<button class="login100-form-btn">
+						<button class="btn btn-primary btn-lg">
 							Login
 						</button>
 					</div>

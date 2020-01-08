@@ -26,6 +26,9 @@ class Routeur {
             if ($_GET['action'] == 'listPosts') {
                 $this->ctrlHome->listPosts();
             }
+            elseif ($_GET['action'] == 'listAllPosts') {
+                $this->ctrlPost->listAllPosts();
+            }
             elseif ($_GET['action'] == 'post') {
                 if (isset($_GET['ID']) && $_GET['ID'] > 0) {
                     $this->ctrlPost->getPost();

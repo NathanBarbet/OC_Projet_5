@@ -40,7 +40,7 @@
                         </div>
                       </div>
                       <div class="col-md-12">
-                        <button type="submit" name="submit" class="button button-a button-big button-rouded">Envoyer</button>
+                        <button type="submit" name="submit" class="btn btn-primary btn-lg">Envoyer</button>
                       </div>
                     </div>
                   </form>

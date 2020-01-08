@@ -3,10 +3,7 @@
   <div class="intro-content display-table">
     <div class="table-cell">
       <div class="container">
-        <?php
-          $data = $post;
-        ?>
-        <h2 class="intro-title mb-4"><?= $data->getTitle()?></h2>
+        <h2 class="intro-title mb-4">Tous les posts</h2>
       </div>
     </div>
   </div>

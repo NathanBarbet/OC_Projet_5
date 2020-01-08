@@ -21,7 +21,9 @@ echo "Votre mail a été envoyé<br>";
 } else {
 echo "Une erreur s'est produite";
 }
-?></p>
+
+header('Refresh: 5; URL=http://localhost/P5/home');
+?>
 <p align="center">Vous allez bientot etre redirigé vers la page d'acceuil<br>
 Si vous n'etes pas redirigé au bout de 5 secondes cliquez <a href="index.php">ici
 </a></p>
