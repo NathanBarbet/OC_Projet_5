@@ -23,13 +23,13 @@ class Routeur {
   public function routerRequete() {
     try {
         if (isset($_GET['action'])) {
-            if ($_GET['action'] == 'listPosts') {
+            if (htmlspecialchars($_GET['action']) == 'listPosts') {
                 $this->ctrlHome->listPosts();
             }
-            elseif ($_GET['action'] == 'listAllPosts') {
+            elseif (htmlspecialchars($_GET['action']) == 'listAllPosts') {
                 $this->ctrlPost->listAllPosts();
             }
-            elseif ($_GET['action'] == 'post') {
+            elseif (htmlspecialchars($_GET['action']) == 'post') {
                 if (isset($_GET['ID']) && $_GET['ID'] > 0) {
                     $this->ctrlPost->getPost();
                 }
@@ -37,8 +37,8 @@ class Routeur {
                     throw new Exception('Aucun identifiant de billet envoyé');
                 }
             }
-            elseif ($_GET['action'] == 'addComment') {
-                if (isset($_GET['ID']) && $_GET['ID'] > 0) {
+            elseif (htmlspecialchars($_GET['action']) == 'addComment') {
+                if (isset($_GET['ID']) && htmlspecialchars($_GET['ID']) > 0) {
                     if (!empty($_SESSION['ID']) && !empty($_POST['comment'])) {
                         $this->ctrlPost->addComment();
                     }
@@ -50,10 +50,10 @@ class Routeur {
                     throw new Exception('Aucun identifiant de billet envoyé');
                 }
             }
-            elseif ($_GET['action'] == 'register') {
-                require'view/frontend/register.php';
+            elseif (htmlspecialchars($_GET['action']) == 'register') {
+                require 'view/frontend/register.php';
             }
-            elseif ($_GET['action'] == 'register_confirm') {
+            elseif (htmlspecialchars($_GET['action']) == 'register_confirm') {
               if (isset($_POST['Name']) AND isset($_POST['Firstname']) AND isset($_POST['Email']) AND isset($_POST['Password'])) {
                 $this->ctrlUser->addUser();
               }
@@ -61,10 +61,10 @@ class Routeur {
                 throw new Exception('Tous les champs ne sont pas remplis');
               }
             }
-            elseif ($_GET['action'] == 'login') {
-                require'view/frontend/login.php';
+            elseif (htmlspecialchars($_GET['action']) == 'login') {
+                require 'view/frontend/login.php';
             }
-            elseif ($_GET['action'] == 'login_confirm') {
+            elseif (htmlspecialchars($_GET['action']) == 'login_confirm') {
               if (isset($_POST['Email']) AND isset($_POST['Password'])) {
                 $this->ctrlUser->logUser();
               }
@@ -72,24 +72,24 @@ class Routeur {
                 throw new Exception('Tous les champs ne sont pas remplis');
               }
             }
-            elseif ($_GET['action'] == 'logout') {
-                require'view/frontend/logout.php';
+            elseif (htmlspecialchars($_GET['action']) == 'logout') {
+                require 'view/frontend/logout.php';
             }
-            elseif ($_GET['action'] == 'panel') {
+            elseif (htmlspecialchars($_GET['action']) == 'panel') {
                 $this->ctrlPanel->listPostsPanel();
             }
-            elseif ($_GET['action'] == 'delpost') {
-                if (isset($_GET['ID']) && $_GET['ID'] > 0 AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1) {
+            elseif (htmlspecialchars($_GET['action']) == 'delpost') {
+                if (isset($_GET['ID']) && htmlspecialchars($_GET['ID']) > 0 AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1) {
                     $this->ctrlPanel->delPostPanel();
                 }
                 else {
                     throw new Exception('Aucun identifiant de billet envoyé');
                 }
             }
-            elseif ($_GET['action'] == 'addpostpanel') {
-                require'view/backend/panel_addpost.php';
+            elseif (htmlspecialchars($_GET['action']) == 'addpostpanel') {
+                require 'view/backend/panel_addpost.php';
             }
-            elseif ($_GET['action'] == 'addpost_confirm')
+            elseif (htmlspecialchars($_GET['action']) == 'addpost_confirm')
             {
                 if (isset($_POST['Title']) AND isset($_POST['Post_lead']) AND isset($_POST['Content']) AND isset($_POST['Img']) AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1)
                 {
@@ -100,10 +100,10 @@ class Routeur {
                     throw new Exception('Aucun identifiant de billet envoyé');
                 }
             }
-            elseif ($_GET['action'] == 'editpostpanel') {
+            elseif (htmlspecialchars($_GET['action']) == 'editpostpanel') {
                 $this->ctrlPanel->getPostPanel();
             }
-            elseif ($_GET['action'] == 'editpostconfirm')
+            elseif (htmlspecialchars($_GET['action']) == 'editpostconfirm')
             {
                 if (isset($_POST['Title']) AND isset($_POST['Post_lead']) AND isset($_POST['Content']) AND isset($_POST['Img']) AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1)
                 {
@@ -114,7 +114,7 @@ class Routeur {
                     throw new Exception('Aucun identifiant de billet envoyé');
                 }
             }
-            elseif ($_GET['action'] == 'publishpost') {
+            elseif (htmlspecialchars($_GET['action']) == 'publishpost') {
                 if (isset($_GET['ID']) && $_GET['ID'] > 0 AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1) {
                     $this->ctrlPanel->publishPost();
                 }
@@ -122,7 +122,7 @@ class Routeur {
                     throw new Exception('Aucun identifiant de billet envoyé');
                 }
             }
-            elseif ($_GET['action'] == 'pausepost') {
+            elseif (htmlspecialchars($_GET['action']) == 'pausepost') {
                 if (isset($_GET['ID']) && $_GET['ID'] > 0 AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1) {
                     $this->ctrlPanel->pausePost();
                 }
@@ -130,10 +130,10 @@ class Routeur {
                     throw new Exception('Aucun identifiant de billet envoyé');
                 }
             }
-            elseif ($_GET['action'] == 'panel_users') {
+            elseif (htmlspecialchars($_GET['action']) == 'panel_users') {
                 $this->ctrlPanel->listUsersPanel();
             }
-            elseif ($_GET['action'] == 'deluser') {
+            elseif (htmlspecialchars($_GET['action']) == 'deluser') {
                 if (isset($_GET['ID']) && $_GET['ID'] > 0 AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1) {
                     $this->ctrlPanel->delUserPanel();
                 }
@@ -141,10 +141,10 @@ class Routeur {
                     throw new Exception('Aucun identifiant de billet envoyé');
                 }
             }
-            elseif ($_GET['action'] == 'panel_comments') {
+            elseif (htmlspecialchars($_GET['action']) == 'panel_comments') {
                 $this->ctrlPanel->listCommentsPanel();
             }
-            elseif ($_GET['action'] == 'delcomment') {
+            elseif (htmlspecialchars($_GET['action']) == 'delcomment') {
                 if (isset($_GET['ID']) && $_GET['ID'] > 0 AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1) {
                     $this->ctrlPanel->delCommentPanel();
                 }
@@ -152,7 +152,7 @@ class Routeur {
                     throw new Exception('Aucun identifiant de billet envoyé');
                 }
             }
-            elseif ($_GET['action'] == 'publishcomment') {
+            elseif (htmlspecialchars($_GET['action']) == 'publishcomment') {
                 if (isset($_GET['ID']) && $_GET['ID'] > 0 AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1) {
                     $this->ctrlPanel->publishComment();
                 }
@@ -160,7 +160,7 @@ class Routeur {
                     throw new Exception('Aucun identifiant de billet envoyé');
                 }
             }
-            elseif ($_GET['action'] == 'pausecomment') {
+            elseif (htmlspecialchars($_GET['action']) == 'pausecomment') {
                 if (isset($_GET['ID']) && $_GET['ID'] > 0 AND isset($_SESSION['Admin']) && $_SESSION['Admin'] == 1) {
                     $this->ctrlPanel->pauseComment();
                 }
@@ -168,8 +168,8 @@ class Routeur {
                     throw new Exception('Aucun identifiant de billet envoyé');
                 }
             }
-            elseif ($_GET['action'] == 'sendcontact') {
-                require'view/frontend/sendcontact.php';
+            elseif (htmlspecialchars($_GET['action']) == 'sendcontact') {
+                require 'view/frontend/sendcontact.php';
             }
           }
           else {
