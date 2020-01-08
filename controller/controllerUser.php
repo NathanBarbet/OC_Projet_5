@@ -18,7 +18,7 @@ class controllerUser {
     else
     {
       echo 'Problème lors de l"inscription : Les mots de passes ne sont pas identiques';
-      require('view/frontend/register.php');
+      require'view/frontend/register.php';
     }
 
     $name_user = htmlspecialchars($_POST['Name']);
@@ -33,7 +33,7 @@ class controllerUser {
 
     $User->addUser();
 
-    require('view/frontend/register_confirm.php');
+    require'view/frontend/register_confirm.php';
   }
 
   public function logUser() {

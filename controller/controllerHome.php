@@ -12,6 +12,6 @@ class controllerHome {
 
   public function listPosts() {
     $posts = $this->post->getPosts();
-    require('view/frontend/home.php');
+    require'view/frontend/home.php';
   }
 }
