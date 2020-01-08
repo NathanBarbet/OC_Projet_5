@@ -20,12 +20,12 @@ require_once('model/Comment.php');
 
       $postId = $_GET['ID'];
       $comments = $this->comment->getComments($postId);
-      require('view/frontend/post.php');
+      require'view/frontend/post.php';
     }
 
     public function listAllPosts() {
       $posts = $this->post->getAllPosts();
-      require('view/frontend/allposts.php');
+      require'view/frontend/allposts.php';
     }
 
     public function addComment() {
