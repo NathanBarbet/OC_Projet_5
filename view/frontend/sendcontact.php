@@ -14,7 +14,7 @@ $headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
 $headers .= "From: $nom <$mail>\r\nReply-to : $nom <$mail>\nX-Mailer:PHP";
 
 $subject="$objet";
-$destinataire="nathan.barbet@hotmail.fr"; //remplacez "webmaster@votre-site.com" par votre adresse e-mail
+$destinataire="nathan.barbet@hotmail.fr, nathan.barbet42@gmail.com"; //remplacez "webmaster@votre-site.com" par votre adresse e-mail
 $body="$message";
 if (mail($destinataire,$subject,$body,$headers)) {
 echo "Votre mail a été envoyé<br>";
@@ -22,7 +22,7 @@ echo "Votre mail a été envoyé<br>";
 echo "Une erreur s'est produite";
 }
 
-header('Refresh: 5; URL=http://localhost/P5/home');
+header('Refresh: 5; URL=http://nathanbarbet.fr/P5/');
 ?>
 <p align="center">Vous allez bientot etre redirigé vers la page d'acceuil<br>
 Si vous n'etes pas redirigé au bout de 5 secondes cliquez <a href="index.php">ici

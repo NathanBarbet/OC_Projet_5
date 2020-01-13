@@ -16,7 +16,7 @@
                     <p><span class="title-s">Nom: </span> <span>Nathan Barbet</span></p>
                     <p><span class="title-s">Profile: </span> <span>Web developer</span></p>
                     <p><span class="title-s">Email: </span> <span>nathan.barbet@hotmail.fr</span></p>
-                    <p><span class="title-s">Tel: </span> <span>00.00.00.00.00</span></p>
+                    <p><span class="title-s">Tel: </span> <span>06.67.56.90.07</span></p>
                   </div>
                 </div>
               </div>
@@ -40,20 +40,18 @@
                   </h5>
                 </div>
                 <p class="lead">
-                  Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id
-                  imperdiet et, porttitor
-                  at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla
-                  porttitor accumsan tincidunt.
+                  Je suis actuellement le parcours DA PHP Symfony sur OpenClassrooms, la plus grande
+                  plateforme de formation en ligne d'Europe.
                 </p>
                 <p class="lead">
-                  Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis
-                  porttitor volutpat. Vestibulum
-                  ac diam sit amet quam vehicula elementum sed sit amet dui. porttitor at sem.
+                  J'aimerais à long terme, pouvoir changer de carrière et m'investir pleinement dans le développement web.
+                  Intégrer une entreprise ou crée des sites internet pour plusieurs d'entre elles.
                 </p>
-                <p class="lead">
-                  Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
-                  Nulla porttitor accumsan
-                  tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                <p class="lead mb-5">
+                  L'informatique m'a toujours attiré et j'aimerais pouvoir réaliser ma carrière professionnelle dans ce domaine.
+                </p>
+                <p>
+                  <a href="http://nathanbarbet.fr/P5/public/Cv.pdf"> <input type="button" class="btn btn-primary btn-lg" data-dismiss="modal" value="Mon CV"> </a>
                 </p>
               </div>
             </div>

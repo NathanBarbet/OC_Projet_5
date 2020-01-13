@@ -33,7 +33,7 @@
           <?php  echo '<a class="nav-link" href="login"> Login</a>'; ?>
         </li>
         <li class="nav-item">
-          <?php  echo '<a class="nav-link" href="register"> Register</a>'; ?>
+          <?php  echo '<a class="nav-link" href="register"> Inscription</a>'; ?>
         </li>
 
         <?php } ?>

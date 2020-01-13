@@ -46,10 +46,10 @@ class PostManager extends Db
 
     public function editPostPanel($postId, $title, $post_lead, $content, $img)
     {
-        $sql = "UPDATE posts
+        $sql = 'UPDATE posts
                 SET
-                Title = '".$title."', Post_lead = '".$post_lead."', Content = '".$content."', Img = '".$img."', Date_modify = NOW()
-                WHERE ID = '".$postId."'";
+                Title = "'.$title.'", Post_lead = "'.$post_lead.'", Content = "'.$content.'", Img = "'.$img.'", Date_modify = NOW()
+                WHERE ID = "'.$postId.'"';
         $requete = $this->executerRequete($sql);
         return $requete;
     }

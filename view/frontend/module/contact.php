@@ -54,10 +54,6 @@
                 </div>
                 <div class="more-info">
                   <p class="lead">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem
-                    expedita aperiam aliquid at.
-                    Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis
-                    mollitia inventore?
                   </p>
                   <ul class="list-ico">
                     <li><span class="ion-ios-location"></span> 28 allée du Mail, 92360, Meudon</li>
@@ -67,10 +63,8 @@
                 </div>
                 <div class="socials">
                   <ul>
-                    <li><a href=""><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
-                    <li><a href=""><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
-                    <li><a href=""><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
-                    <li><a href=""><span class="ico-circle"><i class="ion-social-pinterest"></i></span></a></li>
+                    <li><a href="https://github.com/NathanBarbet"><span class="ico-circle"><i class="ion-social-github"></i></span></a></li>
+                    <li><a href="https://www.linkedin.com/in/nathan-barbet-149721188/"><span class="ico-circle"><i class="ion-social-linkedin"></i></span></a></li>
                   </ul>
                 </div>
               </div>
@@ -85,7 +79,7 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="copyright-box">
-            <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
+            <p class="copyright">&copy; Copyright <strong>Barbet Nathan</strong>. All Rights Reserved</p>
             <div class="credits">
               <!--
                 All the links in the footer should remain intact.
