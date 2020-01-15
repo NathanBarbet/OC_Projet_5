@@ -17,9 +17,9 @@
   ?>
   <form class="form-mf col-md-12" action="index.php?action=addComment&amp;ID=<?= $data->getPostId() ?>" method="post">
     <div class="row">
-      <div class="col-md-12 mb-3">
+      <div class="col-lg-12 col-md-12 mb-3">
         <div>
-          <textarea id="comment" rows="20" cols="120" name="comment"></textarea>
+          <textarea class="form-control" id="comment" rows="15" name="comment"></textarea>
         </div>
       </div>
       <div class="col-md-12 mb-3">
