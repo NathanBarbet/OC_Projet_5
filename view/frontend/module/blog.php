@@ -18,7 +18,7 @@
          foreach ($posts as $data)
          {
          ?>
-         <div class="col-md-4">
+         <div class="col-md-4 mt-4">
            <div class="card card-blog">
              <div class="card-img">
                <a href="post_<?= htmlspecialchars($data->getPostId()) ?>"><img src="<?= htmlspecialchars($data->getImg()) ?>" alt="" class="img-fluid"></a>
@@ -47,7 +47,7 @@
        }
          ?>
       </div>
-      <div class="text-center">
+      <div class="text-center mt-4">
         <a href="allposts" class="btn btn-primary btn-lg" role="button">Voir plus</a>
       </div>
     </div>
