@@ -31,7 +31,7 @@ class PostManager extends Db
 
     public function getPostsPanel()
     {
-        $sql = 'SELECT posts.ID AS postId, Title AS title, Author AS author, Post_statut AS post_statut, Post_statut_ID AS post_statut_ID, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr FROM posts INNER JOIN posts_statut ON posts.Post_statut_ID = posts_statut.ID ORDER BY Date_modify';
+        $sql = 'SELECT posts.ID AS postId, Title AS title, Author AS author, Post_statut AS post_statut, Post_statut_ID AS post_statut_ID, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr FROM posts INNER JOIN posts_statut ON posts.Post_statut_ID = posts_statut.ID ORDER BY Date_modify DESC';
         $requete = $this->executerRequete($sql);
         $posts = $requete->fetchAll(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, 'Post');
         return $posts;
