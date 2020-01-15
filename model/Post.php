@@ -12,6 +12,7 @@ class Post extends PostManager
     protected $date_modify_fr;
     protected $post_statut;
     protected $post_statut_ID;
+    protected $author;
 
     public function getPostId()
     {
@@ -58,6 +59,11 @@ class Post extends PostManager
         return htmlspecialchars($this->post_statut_ID);
     }
 
+    public function getAuthor()
+    {
+        return htmlspecialchars($this->author);
+    }
+
     public function setPostId($postId)
     {
         $this->postId = $postId;
@@ -81,5 +87,10 @@ class Post extends PostManager
     public function setImg($img)
     {
         $this->img = $img;
+    }
+
+    public function setAuthor($author)
+    {
+        $this->author = $author;
     }
 }

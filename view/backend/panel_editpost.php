@@ -21,6 +21,11 @@
                 </div>
                 <div class="col-md-12 mb-3">
                   <div>
+                    <label> </label><input type='text' name='Author' value='<?php echo $data->getAuthor() ?>' required/>* <br />
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div>
                     <label> </label><input type='text' name='Img' value='<?php echo $data->getImg() ?>' required/>* <br /> <br />
                   </div>
                 </div>

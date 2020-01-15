@@ -57,13 +57,15 @@ class controllerPanel {
     $post_lead = $_POST['Post_lead'];
     $content = $_POST['Content'];
     $img = $_POST['Img'];
+    $author = $_POST['Author'];
 
 
-    $Post = new Post;
+    $Post = new Post();
     $Post->setTitle($title);
     $Post->setPost_lead($post_lead);
     $Post->setContent($content);
     $Post->setImg($img);
+    $Post->setAuthor($author);
 
     $Post->addPostPanel();
 
@@ -75,15 +77,18 @@ class controllerPanel {
     $post_lead = $_POST['Post_lead'];
     $content = $_POST['Content'];
     $img = $_POST['Img'];
+    $author = $_POST['Author'];
     $postId = $_GET['ID'];
 
-    $Post = new Post;
+    $Post = new Post();
     $Post->setTitle($title);
     $Post->setPost_lead($post_lead);
     $Post->setContent($content);
     $Post->setImg($img);
+    $Post->setAuthor($author);
+    $Post->setPostId($postId);
 
-    $Post->editPostPanel($postId, $title, $post_lead, $content, $img);
+    $Post->editPostPanel();
 
     header('Location: panel');
   }

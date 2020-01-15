@@ -16,7 +16,7 @@
               <li>
                 <h6>
                 <span class="ion-ios-person"></span>
-                Barbet Nathan</h6>
+                <?=$data->getAuthor() ?></h6>
               </li>
               <li>
                 <h6>

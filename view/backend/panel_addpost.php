@@ -18,6 +18,11 @@
                 </div>
                 <div class="col-md-12 mb-3">
                   <div>
+                    <label> </label><input type='text' name='Author' placeholder="Auteur" required/>* <br />
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div>
                     <label> </label><input type='text' name='Img' placeholder="Lien image" required/>* <br /> <br />
                   </div>
                 </div>

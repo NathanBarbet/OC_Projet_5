@@ -24,7 +24,7 @@
                  <div class="card-footer">
                    <div class="post-author">
                        <img src="https://user.oc-static.com/users/avatars/15620576259606_Image%20petit.png" alt="" class="avatar rounded-circle">
-                       <span class="author">Barbet Nathan</span>
+                       <span class="author"><?=$data->getAuthor() ?></span>
                      </a>
                    </div>
                    <div class="post-date">
