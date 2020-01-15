@@ -14,19 +14,19 @@
               toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | fontselect fontsizeselect forecolor'
       });
     </script>
-    <?php require('module/header.php'); ?>
+    <?php require 'module/header.php'; ?>
   </head>
   <body>
     <?php
       if (isset($_SESSION['Admin']) AND $_SESSION['Admin'] == 1)
       {
-        require('module/nav.php');
+        require 'module/nav.php';
 
-        require('module/sidebar.php');
+        require 'module/sidebar.php';
 
         echo $content;
 
-        require('module/footer.php');
+        require 'module/footer.php';
       }
       else
       {
