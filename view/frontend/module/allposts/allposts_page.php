@@ -28,7 +28,7 @@
                      </a>
                    </div>
                    <div class="post-date">
-                     <span class="ion-ios-clock-outline"></span>le <?= nl2br(htmlspecialchars($data->getDate())) ?>
+                     <span class="ion-ios-clock-outline"></span>le <?= nl2br(htmlspecialchars($data->getDateModify())) ?>
                    </div>
                  </div>
                </div>

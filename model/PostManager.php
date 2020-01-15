@@ -5,7 +5,7 @@ class PostManager extends Db
 {
     public function getPosts()
     {
-        $sql = 'SELECT ID AS postId, Title AS title, Post_lead AS post_lead, Content AS content, Img AS img, Author AS author, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr FROM posts WHERE Post_statut_ID = 1 ORDER BY Date_publish DESC LIMIT 0, 6';
+        $sql = 'SELECT ID AS postId, Title AS title, Post_lead AS post_lead, Content AS content, Img AS img, Author AS author, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr, DATE_FORMAT(Date_modify, \'%d/%m/%Y à %Hh%imin%ss\') AS date_modify_fr FROM posts WHERE Post_statut_ID = 1 ORDER BY Date_modify DESC LIMIT 0, 6';
         $requete = $this->executerRequete ($sql);
         $posts = $requete->fetchAll(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, 'Post');
         return $posts;
@@ -13,7 +13,7 @@ class PostManager extends Db
 
     public function getAllPosts()
     {
-        $sql = "SELECT ID AS postId, Title AS title, Post_lead AS post_lead, Content AS content, Img AS img, Author AS author, DATE_FORMAT(Date_publish, '%d/%m/%Y à %Hh%imin%ss') AS date_fr, DATE_FORMAT(Date_modify, '%d/%m/%Y à %Hh%imin%ss') AS date_modify_fr FROM posts WHERE Post_statut_ID = 1 ORDER BY Date_publish DESC";
+        $sql = "SELECT ID AS postId, Title AS title, Post_lead AS post_lead, Content AS content, Img AS img, Author AS author, DATE_FORMAT(Date_publish, '%d/%m/%Y à %Hh%imin%ss') AS date_fr, DATE_FORMAT(Date_modify, '%d/%m/%Y à %Hh%imin%ss') AS date_modify_fr FROM posts WHERE Post_statut_ID = 1 ORDER BY Date_modify DESC";
         $requete = $this->executerRequete ($sql);
         $posts = $requete->fetchAll(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, 'Post');
         return $posts;
@@ -31,7 +31,7 @@ class PostManager extends Db
 
     public function getPostsPanel()
     {
-        $sql = 'SELECT posts.ID AS postId, Title AS title, Author AS author, Post_statut AS post_statut, Post_statut_ID AS post_statut_ID, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr FROM posts INNER JOIN posts_statut ON posts.Post_statut_ID = posts_statut.ID ORDER BY Date_publish';
+        $sql = 'SELECT posts.ID AS postId, Title AS title, Author AS author, Post_statut AS post_statut, Post_statut_ID AS post_statut_ID, DATE_FORMAT(Date_publish, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr FROM posts INNER JOIN posts_statut ON posts.Post_statut_ID = posts_statut.ID ORDER BY Date_modify';
         $requete = $this->executerRequete($sql);
         $posts = $requete->fetchAll(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, 'Post');
         return $posts;
